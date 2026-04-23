@@ -856,6 +856,80 @@ html {
   transform: scale(1.05);
 }
 
+/* ── BookingCard ── */
+.bk-select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: .5rem;
+  color: var(--stone-900);
+}
+
+.bk-dropdown {
+  position: absolute;
+  top: calc(100% + .5rem);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e7e5e4;
+  border-radius: 1rem;
+  box-shadow: 0 16px 40px rgba(28, 25, 23, .12);
+  list-style: none;
+  z-index: 50;
+  overflow: hidden;
+  animation: fadeDown .15s ease;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bk-dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .85rem 1.25rem;
+  font-size: .875rem;
+  color: #44403c;
+  transition: background .15s, color .15s;
+}
+
+.bk-dropdown-item:hover {
+  background: #fafaf9;
+  color: var(--stone-900);
+}
+
+.bk-dropdown-item--active {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Date input sobreposto ao display */
+.bk-date-display {
+  display: block;
+  pointer-events: none;
+}
+
+.bk-date-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+
 /* Hero right – stat cards */
 .lx-hero-right {
   display: none;
@@ -1231,9 +1305,8 @@ body ::selection {
 .services {
   background: #171717;
   color: #e5e5e5;
-  padding: 4rem 1.25rem;
+  padding: 6rem 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, .05);
-  overflow-x: hidden; /* bloqueia qualquer vazamento */
 }
 
 @media (min-width: 768px) {
@@ -1247,8 +1320,7 @@ body ::selection {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  overflow: hidden;
+  gap: 4rem;
 }
 
 @media (min-width: 768px) {
