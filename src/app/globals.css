@@ -154,22 +154,25 @@ html {
   flex-shrink: 0;
 }
 
+/* Botao WhatsApp — mobile: visível e centralizado na barra */
 .fn-cta__btn {
-  display: none;
+  display: flex; /* Sempre visível */
   align-items: center;
   gap: .5rem;
-  padding: .65rem 1.25rem;
+  padding: .55rem 1rem;
   border-radius: 9999px;
-  font-size: .75rem;
+  font-size: .72rem;
   font-weight: 600;
   text-decoration: none;
   transition: background .25s, transform .25s;
   letter-spacing: .02em;
+  white-space: nowrap;
 }
 
 @media (min-width: 640px) {
   .fn-cta__btn {
-    display: flex;
+    padding: .65rem 1.25rem;
+    font-size: .75rem;
   }
 }
 
@@ -200,13 +203,20 @@ html {
   background: none;
   border: none;
   cursor: pointer;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   transition: background .2s;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .fn-burger {
+    display: none;
+  }
 }
 
 .fn-burger--light {
@@ -1221,8 +1231,9 @@ body ::selection {
 .services {
   background: #171717;
   color: #e5e5e5;
-  padding: 6rem 1.5rem;
+  padding: 4rem 1.25rem;
   border-top: 1px solid rgba(255, 255, 255, .05);
+  overflow-x: hidden; /* bloqueia qualquer vazamento */
 }
 
 @media (min-width: 768px) {
@@ -1236,7 +1247,8 @@ body ::selection {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 3rem;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -1264,12 +1276,13 @@ body ::selection {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: 70px;
-  height: 280px; /* Altura mínima em mobile */
+  margin-top: 2rem; /* Era 70px fixo — agora relativo */
+  height: 260px;
 }
 
 @media (min-width: 768px) {
   .img-box {
+    margin-top: 3rem;
     height: 60vh;
   }
 }
