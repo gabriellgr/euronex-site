@@ -93,8 +93,8 @@ export default function BookingCard() {
 
         {/* ── Data + CTA ── */}
         <div className="lx-search-field lx-search-field-btn">
-          <div style={{ position: "relative" }}>
-            <label className="lx-search-label">Data</label>
+          <div style={{ position: "relative", flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <label className="lx-search-label" style={{ pointerEvents: "none" }}>Data</label>
             <span className="lx-search-value bk-date-display">{displayDate}</span>
             {/* Input nativo sobreposto invisível para abrir o date picker */}
             <input
@@ -104,6 +104,7 @@ export default function BookingCard() {
               min={new Date().toISOString().split("T")[0]}
               onChange={(e) => setDate(e.target.value)}
               aria-label="Selecionar data"
+              style={{ zIndex: 10, cursor: "pointer" }}
             />
           </div>
 
