@@ -101,8 +101,8 @@ export default function Home() {
             <ul className="svc-list">
               {[
                 { n: "01", label: "Transfer Aeroporto CDG & Orly" },
-                { n: "02", label: "City Tour Paris Exclusivo" },
-                { n: "03", label: "Excursão a Versalhes" },
+                { n: "02", label: "Excursão a Versalhes" },
+                { n: "03", label: "Transfer Privativo" },
               ].map((s) => (
                 <li key={s.n} className="svc-item">
                   <div className="svc-item-l">

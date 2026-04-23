@@ -6,7 +6,6 @@ const SERVICES = [
   "Transfer Executivo",
   "Transfer Aeroporto CDG",
   "Transfer Aeroporto Orly",
-  "City Tour Paris Exclusivo",
   "Excursão a Versalhes",
   "Transfer Privativo",
 ];
