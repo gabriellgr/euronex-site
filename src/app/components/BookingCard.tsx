@@ -6,8 +6,6 @@ const SERVICES = [
   "Transfer Executivo",
   "Transfer Aeroporto CDG",
   "Transfer Aeroporto Orly",
-  "Excursão a Versalhes",
-  "Transfer Privativo",
 ];
 
 const WA_BASE = "https://wa.me/5511915890685?text=";
@@ -15,10 +13,10 @@ const WA_BASE = "https://wa.me/5511915890685?text=";
 function buildMessage(service: string, date: string): string {
   const dateStr = date
     ? new Date(date + "T12:00:00").toLocaleDateString("pt-BR", {
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-      })
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    })
     : "";
 
   let msg = `Olá! Gostaria de reservar um *${service}* em Paris`;
@@ -37,10 +35,10 @@ export default function BookingCard() {
   // Formata a data para exibição
   const displayDate = date
     ? new Date(date + "T12:00:00").toLocaleDateString("pt-BR", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-      })
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    })
     : "Selecione a data";
 
   return (
